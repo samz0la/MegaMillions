@@ -5,6 +5,6 @@
   <item
     android:id="@+id/action_clear"
     android:orderInCategory="100"
-    android:title="@string/clear"
+    android:title="@string/clear_all_picks"
     app:showAsAction="never"/>
 </menu>
