@@ -3,4 +3,5 @@
   <string name="clear_all_picks">Clear</string>
   <string name="delete_pick">Delete</string>
   <string name="pick_number_format">%02d</string>
+  <string name="clear_all_format">%d picks deleted</string>
 </resources>

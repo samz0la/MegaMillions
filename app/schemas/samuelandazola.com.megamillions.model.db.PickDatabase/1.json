@@ -1,0 +1,103 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "d1a76bb86128305196ef9531ea160786",
+    "entities": [
+      {
+        "tableName": "Pick",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`pick_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `timestamp` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "pick_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "pick_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Pick_timestamp",
+            "unique": false,
+            "columnNames": [
+              "timestamp"
+            ],
+            "createSql": "CREATE  INDEX `index_Pick_timestamp` ON `${TABLE_NAME}` (`timestamp`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "PickNumber",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`pick_id` INTEGER NOT NULL, `value` INTEGER NOT NULL, `pool` INTEGER NOT NULL, PRIMARY KEY(`pick_id`, `pool`, `value`), FOREIGN KEY(`pick_id`) REFERENCES `Pick`(`pick_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "pickId",
+            "columnName": "pick_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "value",
+            "columnName": "value",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pool",
+            "columnName": "pool",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "pick_id",
+            "pool",
+            "value"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_PickNumber_pick_id",
+            "unique": false,
+            "columnNames": [
+              "pick_id"
+            ],
+            "createSql": "CREATE  INDEX `index_PickNumber_pick_id` ON `${TABLE_NAME}` (`pick_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Pick",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "pick_id"
+            ],
+            "referencedColumns": [
+              "pick_id"
+            ]
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"d1a76bb86128305196ef9531ea160786\")"
+    ]
+  }
+}

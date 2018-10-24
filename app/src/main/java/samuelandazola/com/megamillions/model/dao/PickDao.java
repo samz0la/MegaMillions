@@ -23,6 +23,11 @@ public interface PickDao {
   @Transaction
   @Query("SELECT *FROM Pick ORDER BY timestamp")
   List<PickAndNumbers> selectWithNumbers();
+
   @Delete
   int delete(Pick pick);
+
+  @Query("DELETE FROM Pick")
+  int nuke();
+
 }
