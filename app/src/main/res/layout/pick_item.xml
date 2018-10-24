@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:paddingTop="4dp"
+  android:paddingBottom="4dp"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  // TODO Define and use styles for numbers; different style for last number
+
+  <android.support.constraint.Guideline
+    android:id="@+id/guidline_0"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.15"/>
+
+  <android.support.constraint.Guideline
+    android:id="@+id/guidline_1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.3"/>
+
+  <android.support.constraint.Guideline
+    android:id="@+id/guidline_2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.45"/>
+
+  <android.support.constraint.Guideline
+    android:id="@+id/guidline_3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.6"/>
+
+  <android.support.constraint.Guideline
+    android:id="@+id/guidline_4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.75"/>
+
+  <android.support.constraint.Guideline
+    android:id="@+id/guidline_5"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.9"/>
+
+  <TextView
+    android:id="@+id/num_0"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="@id/guidline_0"/>
+
+  <TextView
+    android:id="@+id/num_1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="@id/guidline_1"/>
+
+  <TextView
+    android:id="@+id/num_2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="@id/guidline_2"/>
+
+  <TextView
+    android:id="@+id/num_3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="@id/guidline_3"/>
+
+  <TextView
+    android:id="@+id/num_4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="@id/guidline_4"/>
+
+  <TextView
+    android:id="@+id/num_5"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="@id/guidline_5"/>
+
+</android.support.constraint.ConstraintLayout>
